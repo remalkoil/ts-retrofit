@@ -114,7 +114,10 @@ export class BaseService {
     const query = this._resolveQuery(methodName, args);
     const data = this._resolveData(methodName, headers, args);
     if (headers["content-type"] && headers["content-type"].indexOf("multipart/form-data") !== -1) {
-      headers = { ...headers, ...(data as FormData).getHeaders() };
+      const formData = data as FormData;
+      if (formData?.getHeaders != null) {
+        headers = {...headers, ...(data as FormData).getHeaders()};
+      }
     }
     return { url, method, headers, query, data };
   }

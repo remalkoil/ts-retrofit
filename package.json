@@ -1,8 +1,11 @@
 {
-  "name": "ts-retrofit",
+  "name": "ts-retrofit-browser",
   "version": "1.11.0",
-  "description": "A declarative and axios based retrofit implementation for JavaScript and TypeScript.",
-  "repository": "https://github.com/nullcc/ts-retrofit",
+  "description": "A declarative and axios based retrofit implementation for JavaScript and TypeScript. Multipart works with browser",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/remalkoil/ts-retrofit.git"
+  },
   "main": "lib/index.js",
   "types": "lib/types/index.d.ts",
   "keywords": [
@@ -11,12 +14,14 @@
     "js",
     "axios"
   ],
-  "bugs": "https://github.com/nullcc/ts-retrofit/issues",
+  "bugs": {
+    "url": "https://github.com/remalkoil/ts-retrofit/issues"
+  },
   "scripts": {
     "test": "jest --coverage",
     "tslint": "tslint -c tslint.json --project . src/**/*.ts test/**/*.test.ts",
     "build": "tsc",
-    "make-badges": "node_modules/.bin/jest-badges-readme",
+    "make-badges": "jest-badges-readme",
     "prepare": "npm run build",
     "prepublishOnly": "npm run tslint",
     "preversion": "npm run tslint",
@@ -48,5 +53,10 @@
     "ts-jest": "^24.0.2",
     "tslint": "^5.19.0",
     "typescript": "^3.7.5"
+  },
+  "homepage": "https://github.com/remalkoil/ts-retrofit#readme",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
   }
 }
